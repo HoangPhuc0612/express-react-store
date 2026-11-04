@@ -14,7 +14,7 @@ function useUserSync() {
     if (isSignedIn && user && !isPending && !isSuccess) {
       console.log("Sync user");
       syncUserMutation({
-        email: user.primaryEmailAddress.emailAddress,
+        email: user.primaryEmailAddress?.emailAddress,
         name: user.fullName || user.firstName,
         imageUrl: user.imageUrl,
       });
