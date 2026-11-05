@@ -19,6 +19,9 @@ const CreatePage = () => {
   });
   const handleSubmit = (e) => {
     e.preventDefault();
+    formData.title.trim();
+    formData.description.trim();
+    formData.imageUrl.trim();
     createProduct.mutate(formData, {
       onSuccess: () => navigate("/"),
     });
@@ -26,7 +29,7 @@ const CreatePage = () => {
   return (
     <div className="max-w-lg mx-auto">
       <Link to="/" className="btn btn-ghost btn-sm gap-1 mb-4">
-        <ArrowLeftIcon className="size-4" />
+        <ArrowLeftIcon className="size-4" /> Back
       </Link>
       <div className="card bg-base-300">
         <div className="card-body">
