@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, useNavigate } from "react-router";
 import { useCreateProduct } from "../hooks/useProducts";
 import {
@@ -8,6 +7,7 @@ import {
   SparklesIcon,
   TypeIcon,
 } from "lucide-react";
+import { useState } from "react";
 
 const CreatePage = () => {
   const navigate = useNavigate();

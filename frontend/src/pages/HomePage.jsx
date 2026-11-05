@@ -15,7 +15,7 @@ const HomePage = () => {
     );
   }
   return (
-    <div className="spacey-10">
+    <div className="space-y-10">
       {/* HERO */}
       <div className="hero bg-linear-to-br from-base-300 via-base-200 to-base-300 rounded-box overflow-hidden">
         <div className="hero-content flex-col lg:flex-row-reverse gap-10 py-10">
