@@ -19,12 +19,25 @@ const CreatePage = () => {
   });
   const handleSubmit = (e) => {
     e.preventDefault();
-    formData.title.trim();
-    formData.description.trim();
-    formData.imageUrl.trim();
-    createProduct.mutate(formData, {
-      onSuccess: () => navigate("/"),
-    });
+
+    const title = formData.title.trim();
+    const description = formData.description.trim();
+    const imageUrl = formData.imageUrl.trim();
+    if (!title || !description || !imageUrl) {
+      alert("Vui lòng nhập đầy đủ thông tin!");
+      return;
+    }
+    createProduct.mutate(
+      {
+        ...formData,
+        title,
+        description,
+        imageUrl,
+      },
+      {
+        onSuccess: () => navigate("/"),
+      },
+    );
   };
   return (
     <div className="max-w-lg mx-auto">
